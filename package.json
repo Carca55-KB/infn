@@ -1,7 +1,7 @@
 {
   "name": "piccolo-principe",
   "version": "1.0.0",
-  "description": "Sito web sul Piccolo Principe",
+  "description": "Sito web sull'evoluzione del modello atomico - INFN",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

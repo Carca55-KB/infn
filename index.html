@@ -3,49 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evoluzione del Modello Atomico</title>
+  <title>Il viaggio di Atoman</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0b0e17;
-      color: #e8edf5;
+      background: #e8edf5;
+      color: #1a1f2e;
       line-height: 1.6;
       padding-top: 60px;
     }
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      background: #0f1420;
+      background: rgba(15, 20, 32, 0.9);
       border-bottom: 1px solid #2a3a6a;
       padding: 0 2rem;
       height: 60px;
       display: flex;
       align-items: center;
       z-index: 100;
+      backdrop-filter: blur(8px);
     }
     nav .nav-title {
-      color: #64b5f6;
+      color: #1a2a5e;
       font-weight: 700;
       font-size: 1rem;
     }
+    /* Particelle animate */
+    .particles {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(26, 42, 94, 0.08);
+      animation: float linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+    }
+    .particle:nth-child(1) { width: 12px; height: 12px; left: 5%; animation-duration: 18s; animation-delay: 0s; }
+    .particle:nth-child(2) { width: 20px; height: 20px; left: 15%; animation-duration: 22s; animation-delay: 2s; background: rgba(100, 181, 246, 0.1); border-radius: 40%; }
+    .particle:nth-child(3) { width: 8px; height: 8px; left: 25%; animation-duration: 15s; animation-delay: 4s; }
+    .particle:nth-child(4) { width: 16px; height: 16px; left: 35%; animation-duration: 20s; animation-delay: 1s; background: rgba(206, 147, 216, 0.08); border-radius: 40%; }
+    .particle:nth-child(5) { width: 10px; height: 10px; left: 45%; animation-duration: 25s; animation-delay: 3s; }
+    .particle:nth-child(6) { width: 14px; height: 14px; left: 55%; animation-duration: 17s; animation-delay: 5s; background: rgba(100, 181, 246, 0.08); }
+    .particle:nth-child(7) { width: 22px; height: 22px; left: 65%; animation-duration: 23s; animation-delay: 0s; background: rgba(206, 147, 216, 0.1); border-radius: 40%; }
+    .particle:nth-child(8) { width: 6px; height: 6px; left: 75%; animation-duration: 19s; animation-delay: 2s; }
+    .particle:nth-child(9) { width: 18px; height: 18px; left: 82%; animation-duration: 21s; animation-delay: 4s; background: rgba(100, 181, 246, 0.06); }
+    .particle:nth-child(10) { width: 10px; height: 10px; left: 92%; animation-duration: 16s; animation-delay: 3s; }
+    .particle:nth-child(11) { width: 26px; height: 26px; left: 10%; animation-duration: 28s; animation-delay: 6s; background: rgba(206, 147, 216, 0.06); border-radius: 40%; }
+    .particle:nth-child(12) { width: 8px; height: 8px; left: 50%; animation-duration: 14s; animation-delay: 1s; }
     header {
       text-align: center;
-      padding: 4rem 2rem 2rem;
-      background: linear-gradient(135deg, #0b0e17 0%, #1a1f2e 100%);
-      border-bottom: 2px solid #2a3a6a;
+      padding: 5rem 2rem 3rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(232, 237, 245, 0.7)), url('Fisici.jpeg') center/cover fixed;
+      border-bottom: 2px solid #d0d8e8;
+      position: relative;
+      z-index: 1;
     }
     header h1 {
       font-size: 2.8rem;
-      background: linear-gradient(90deg, #64b5f6, #ce93d8, #64b5f6);
+      background: linear-gradient(90deg, #1a2a5e, #5a3d7a, #1a2a5e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: 2px;
+      text-shadow: 0 2px 12px rgba(255,255,255,0.5);
     }
     header p {
-      color: #8899bb;
+      color: #2a3a5e;
       font-size: 1.1rem;
       margin-top: 0.5rem;
+      font-weight: 500;
     }
     .timeline {
       max-width: 1000px;
@@ -60,7 +97,7 @@
       top: 0;
       bottom: 0;
       width: 3px;
-      background: linear-gradient(180deg, #64b5f6, #ce93d8, #64b5f6);
+      background: linear-gradient(180deg, #1a2a5e, #5a3d7a, #1a2a5e);
       transform: translateX(-50%);
     }
     .card {
@@ -73,19 +110,20 @@
     .card:nth-child(even) { flex-direction: row-reverse; }
     .card-content {
       width: 45%;
-      background: #141a28;
-      border: 1px solid #2a3a6a;
+      background: #ffffff;
+      border: 1px solid #d0d8e8;
       border-radius: 16px;
       padding: 1.8rem;
       transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     }
     .card-content:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(100, 181, 246, 0.15);
+      box-shadow: 0 8px 30px rgba(26, 42, 94, 0.1);
     }
     .card-year {
       display: inline-block;
-      background: linear-gradient(135deg, #64b5f6, #ce93d8);
+      background: linear-gradient(135deg, #1a2a5e, #5a3d7a);
       color: #fff;
       padding: 0.3rem 1rem;
       border-radius: 20px;
@@ -95,18 +133,30 @@
     }
     .card-content h2 {
       font-size: 1.5rem;
-      color: #ce93d8;
+      color: #5a3d7a;
       margin-bottom: 0.3rem;
     }
     .card-content h3 {
       font-size: 0.95rem;
-      color: #64b5f6;
+      color: #1a2a5e;
       font-weight: 400;
       margin-bottom: 0.8rem;
     }
     .card-content p {
-      color: #b0c4de;
+      color: #3a4a6a;
       font-size: 0.95rem;
+    }
+    .card-content .quote-text {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: #3a4a6a;
+      font-style: italic;
+      text-align: left;
+      line-height: 1.5;
+      background: #f0f4fa;
+      padding: 1rem;
+      border-radius: 12px;
+      border-left: 3px solid #1a2a5e;
     }
     .card-visual {
       width: 45%;
@@ -117,25 +167,13 @@
     .card-visual img.demo-image {
       width: 85%;
       border-radius: 12px;
-      border: 2px solid #2a3a6a;
+      border: 2px solid #d0d8e8;
       cursor: zoom-in;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .card-visual img.demo-image:hover {
       transform: scale(1.03);
-      box-shadow: 0 8px 30px rgba(100, 181, 246, 0.25);
-    }
-    .card-visual .quote-text {
-      margin-top: 1rem;
-      font-size: 0.82rem;
-      color: #b0c4de;
-      font-style: italic;
-      text-align: left;
-      line-height: 1.5;
-      background: #141a28;
-      padding: 1rem;
-      border-radius: 12px;
-      border-left: 3px solid #64b5f6;
+      box-shadow: 0 8px 30px rgba(26, 42, 94, 0.12);
     }
     /* Modal per zoom immagine */
     .modal-overlay {
@@ -209,17 +247,17 @@
     footer {
       text-align: center;
       padding: 2rem;
-      color: #556688;
+      color: #667799;
       font-size: 0.85rem;
-      border-top: 1px solid #1a1f2e;
+      border-top: 1px solid #d0d8e8;
     }
     .qr-section {
       text-align: center;
       padding: 2rem 2rem 3rem;
-      border-top: 1px solid #1a1f2e;
+      border-top: 1px solid #d0d8e8;
     }
     .qr-section p {
-      color: #556688;
+      color: #667799;
       font-size: 0.85rem;
       margin-bottom: 1rem;
     }
@@ -227,17 +265,25 @@
       border-radius: 12px;
       background: #fff;
       padding: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
   </style>
 </head>
 <body>
+
+<div class="particles">
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
 
 <nav>
   <span class="nav-title">⚛ INFN</span>
 </nav>
 
 <header>
-  <h1>⚛ Evoluzione del Modello Atomico</h1>
+  <h1>⚛ Il viaggio di Atoman</h1>
   <p>Dal pensiero greco alla meccanica quantistica</p>
 </header>
 

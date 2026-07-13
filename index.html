@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evoluzione del Modello Atomico</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0b0e17;
+      color: #e8edf5;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: linear-gradient(135deg, #0b0e17 0%, #1a1f2e 100%);
+      border-bottom: 2px solid #2a3a6a;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(90deg, #64b5f6, #ce93d8, #64b5f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+    }
+    header p {
+      color: #8899bb;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+    .timeline {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #64b5f6, #ce93d8, #64b5f6);
+      transform: translateX(-50%);
+    }
+    .card {
+      display: flex;
+      margin-bottom: 3rem;
+      position: relative;
+      align-items: center;
+    }
+    .card:nth-child(odd) { flex-direction: row; }
+    .card:nth-child(even) { flex-direction: row-reverse; }
+    .card-content {
+      width: 45%;
+      background: #141a28;
+      border: 1px solid #2a3a6a;
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card-content:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(100, 181, 246, 0.15);
+    }
+    .card-year {
+      display: inline-block;
+      background: linear-gradient(135deg, #64b5f6, #ce93d8);
+      color: #fff;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+    .card-content h2 {
+      font-size: 1.5rem;
+      color: #ce93d8;
+      margin-bottom: 0.3rem;
+    }
+    .card-content h3 {
+      font-size: 0.95rem;
+      color: #64b5f6;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    .card-content p {
+      color: #b0c4de;
+      font-size: 0.95rem;
+    }
+    .card-visual {
+      width: 45%;
+      text-align: center;
+      font-size: 5rem;
+      line-height: 1;
+    }
+    @media (max-width: 768px) {
+      .timeline::before { left: 20px; }
+      .card, .card:nth-child(even) { flex-direction: column !important; align-items: flex-start; }
+      .card-content, .card-visual { width: 100%; }
+      .card-content { margin-left: 0; }
+      .card-visual { text-align: left; padding-left: 50px; font-size: 3.5rem; margin-bottom: 0.5rem; }
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #556688;
+      font-size: 0.85rem;
+      border-top: 1px solid #1a1f2e;
+    }
+    .qr-section {
+      text-align: center;
+      padding: 2rem 2rem 3rem;
+      border-top: 1px solid #1a1f2e;
+    }
+    .qr-section p {
+      color: #556688;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .qr-section img {
+      border-radius: 12px;
+      background: #fff;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>⚛ Evoluzione del Modello Atomico</h1>
+  <p>Dal pensiero greco alla meccanica quantistica</p>
+</header>
+
+<div class="timeline">
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-year">~400 a.C.</span>
+      <h2>Modello di Democrito</h2>
+      <h3>Filosofia greca</h3>
+      <p>Democrito ipotizza che tutta la materia sia composta da particelle indivisibili chiamate <em>átomos</em> (indivisibile). L'atomo è eterno, immutabile e indistruttibile.</p>
+    </div>
+    <div class="card-visual">⏺</div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-year">1803</span>
+      <h2>Modello di Dalton</h2>
+      <h3>La sfera piena</h3>
+      <p>John Dalton formalizza la teoria atomica: ogni elemento è composto da atomi identici, indivisibili e indistruttibili. L'atomo è una sfera massiccia e omogenea.</p>
+    </div>
+    <div class="card-visual">⚪</div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-year">1897</span>
+      <h2>Modello di Thomson</h2>
+      <h3>"Plum pudding"</h3>
+      <p>Joseph John Thomson scopre l'elettrone. Propone un atomo composto da una sfera di carica positiva con elettroni negativi immersi come "uvetta in un budino".</p>
+    </div>
+    <div class="card-visual">🟠</div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-year">1911</span>
+      <h2>Modello di Rutherford</h2>
+      <h3>Modello planetario</h3>
+      <p>Ernest Rutherford, con l'esperimento della lamina d'oro, scopre il nucleo atomico. L'atomo ha un piccolo nucleo denso e positivo, con elettroni orbitanti intorno.</p>
+    </div>
+    <div class="card-visual">🔄</div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-year">1913</span>
+      <h2>Modello di Bohr</h2>
+      <h3>Orbite quantizzate</h3>
+      <p>Niels Bohr introduce i livelli energetici: gli elettroni possono orbitare solo su orbite fisse e quantizzate. I salti tra orbite spiegano gli spettri atomici.</p>
+    </div>
+    <div class="card-visual">⏣</div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-year">1925-1930</span>
+      <h2>Modello Quantomeccanico</h2>
+      <h3>Schrödinger · Heisenberg · Dirac</h3>
+      <p>Gli elettroni non hanno orbite definite ma esistono in <em>orbitali</em>, descritti da funzioni d'onda. Il principio di indeterminazione di Heisenberg e l'equazione di Schrödinger rivoluzionano la fisica.</p>
+    </div>
+    <div class="card-visual">☁</div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-year">1964</span>
+      <h2>Modello Standard</h2>
+      <h3>Particelle subnucleari</h3>
+      <p>Murray Gell-Mann propone i quark, costituenti fondamentali di protoni e neutroni. Il Modello Standard descrive particelle elementari e forze fondamentali.</p>
+    </div>
+    <div class="card-visual">✦</div>
+  </div>
+
+</div>
+
+<footer>
+  INFN · Presentazione sull'evoluzione del modello atomico
+</footer>
+
+<div class="qr-section">
+  <p>Scansiona per aprire questa pagina</p>
+  <img id="qrCode" alt="QR Code" width="150" height="150">
+</div>
+
+<script>
+  const url = window.location.href || 'https://infn.it/atomo';
+  document.getElementById('qrCode').src =
+    'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + encodeURIComponent(url);
+</script>
+
+</body>
+</html>

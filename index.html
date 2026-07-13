@@ -237,7 +237,28 @@
     .modal-close:hover {
       background: rgba(255,255,255,0.2);
     }
-    .card-content .quote-text { margin-top: 1.2rem; }
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      background: rgba(26, 42, 94, 0.15);
+      border: 1px solid rgba(26, 42, 94, 0.2);
+      border-radius: 50%;
+      color: #1a2a5e;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .music-btn:hover {
+      background: rgba(26, 42, 94, 0.25);
+    }
     @media (max-width: 768px) {
       .timeline::before { left: 20px; }
       .card, .card:nth-child(even) { flex-direction: column !important; align-items: flex-start; }
@@ -378,8 +399,13 @@
 </div>
 
 <footer>
-  INFN · Presentazione sull'evoluzione del modello atomico
+  Il viaggio di Atoman
 </footer>
+
+<audio id="bgMusic" loop>
+  <source src="Isaac Newton - Theme [VmRPdhlKrEc].mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🔇</button>
 
 <div class="qr-section">
   <p>Scansiona per aprire questa pagina</p>
@@ -396,6 +422,15 @@
 <script>
   document.getElementById('qrCode').src =
     'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://infn.onrender.com';
+
+  let musicPlaying = false;
+  const audio = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  function toggleMusic() {
+    if (musicPlaying) { audio.pause(); musicBtn.textContent = '🔇'; }
+    else { audio.play().catch(() => {}); musicBtn.textContent = '🎵'; }
+    musicPlaying = !musicPlaying;
+  }
 
   let isZoomed = false, scale = 1, posX = 0, posY = 0, isDragging = false, startX, startY;
 

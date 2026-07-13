@@ -157,8 +157,25 @@
     .card-visual {
       width: 45%;
       text-align: center;
-      font-size: 5rem;
-      line-height: 1;
+    }
+    .card-visual img {
+      max-width: 100%;
+      border-radius: 12px;
+      border: 2px solid #2a3a6a;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card-visual img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(100, 181, 246, 0.25);
+    }
+    .card-visual .scientist-img {
+      width: 100%;
+      margin-bottom: 0.8rem;
+    }
+    .card-visual .model-img {
+      width: 80%;
+      display: block;
+      margin: 0 auto;
     }
     @media (max-width: 768px) {
       .timeline::before { left: 20px; }
@@ -199,7 +216,6 @@
     <button class="dropdown-btn">Menu ▼</button>
     <div class="dropdown-content">
       <a href="index.html">Evoluzione del modello atomico</a>
-      <a href="il-viaggio-di-atom-men.html">Il viaggio di Atoman</a>
     </div>
   </div>
 </nav>
@@ -218,7 +234,10 @@
       <h3>Filosofia greca</h3>
       <p>Democrito ipotizza che tutta la materia sia composta da particelle indivisibili chiamate <em>átomos</em> (indivisibile). L'atomo è eterno, immutabile e indistruttibile.</p>
     </div>
-    <div class="card-visual">⏺</div>
+    <div class="card-visual">
+      <img class="scientist-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Democritus2.jpg/250px-Democritus2.jpg" alt="Democrito">
+      <img class="model-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Democritus_atom.png/250px-Democritus_atom.png" alt="Modello di Democrito">
+    </div>
   </div>
 
   <div class="card">
@@ -228,7 +247,10 @@
       <h3>La sfera piena</h3>
       <p>John Dalton formalizza la teoria atomica: ogni elemento è composto da atomi identici, indivisibili e indistruttibili. L'atomo è una sfera massiccia e omogenea.</p>
     </div>
-    <div class="card-visual">⚪</div>
+    <div class="card-visual">
+      <img class="scientist-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Dalton_John_desk.jpg/250px-Dalton_John_desk.jpg" alt="John Dalton">
+      <img class="model-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Dalton_atom_model.svg/250px-Dalton_atom_model.svg.png" alt="Modello di Dalton">
+    </div>
   </div>
 
   <div class="card">
@@ -238,7 +260,10 @@
       <h3>"Plum pudding"</h3>
       <p>Joseph John Thomson scopre l'elettrone. Propone un atomo composto da una sfera di carica positiva con elettroni negativi immersi come "uvetta in un budino".</p>
     </div>
-    <div class="card-visual">🟠</div>
+    <div class="card-visual">
+      <img class="scientist-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/JJ_Thomson_Cavendish_Laboratory.jpg/250px-JJ_Thomson_Cavendish_Laboratory.jpg" alt="J.J. Thomson">
+      <img class="model-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Plum_pudding_atom.svg/250px-Plum_pudding_atom.svg.png" alt="Modello di Thomson">
+    </div>
   </div>
 
   <div class="card">
@@ -248,7 +273,10 @@
       <h3>Modello planetario</h3>
       <p>Ernest Rutherford, con l'esperimento della lamina d'oro, scopre il nucleo atomico. L'atomo ha un piccolo nucleo denso e positivo, con elettroni orbitanti intorno.</p>
     </div>
-    <div class="card-visual">🔄</div>
+    <div class="card-visual">
+      <img class="scientist-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Ernest_Rutherford_1908.jpg/250px-Ernest_Rutherford_1908.jpg" alt="Ernest Rutherford">
+      <img class="model-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Rutherford_atom.svg/250px-Rutherford_atom.svg.png" alt="Modello di Rutherford">
+    </div>
   </div>
 
   <div class="card">
@@ -258,7 +286,10 @@
       <h3>Orbite quantizzate</h3>
       <p>Niels Bohr introduce i livelli energetici: gli elettroni possono orbitare solo su orbite fisse e quantizzate. I salti tra orbite spiegano gli spettri atomici.</p>
     </div>
-    <div class="card-visual">⏣</div>
+    <div class="card-visual">
+      <img class="scientist-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Niels_Bohr.jpg/250px-Niels_Bohr.jpg" alt="Niels Bohr">
+      <img class="model-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Bohr_atom_model.svg/250px-Bohr_atom_model.svg.png" alt="Modello di Bohr">
+    </div>
   </div>
 
   <div class="card">
@@ -268,7 +299,10 @@
       <h3>Schrödinger · Heisenberg · Dirac</h3>
       <p>Gli elettroni non hanno orbite definite ma esistono in <em>orbitali</em>, descritti da funzioni d'onda. Il principio di indeterminazione di Heisenberg e l'equazione di Schrödinger rivoluzionano la fisica.</p>
     </div>
-    <div class="card-visual">☁</div>
+    <div class="card-visual">
+      <img class="scientist-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Erwin_Schr%C3%B6dinger_%28Nobel%29.jpg/250px-Erwin_Schr%C3%B6dinger_%28Nobel%29.jpg" alt="Erwin Schrödinger">
+      <img class="model-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Schr%C3%B6dinger_atom_model.svg/250px-Schr%C3%B6dinger_atom_model.svg.png" alt="Modello quantomeccanico">
+    </div>
   </div>
 
   <div class="card">
@@ -278,7 +312,10 @@
       <h3>Particelle subnucleari</h3>
       <p>Murray Gell-Mann propone i quark, costituenti fondamentali di protoni e neutroni. Il Modello Standard descrive particelle elementari e forze fondamentali.</p>
     </div>
-    <div class="card-visual">✦</div>
+    <div class="card-visual">
+      <img class="scientist-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Murray_Gell_Mann_in_2012.jpg/250px-Murray_Gell_Mann_in_2012.jpg" alt="Murray Gell-Mann">
+      <img class="model-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Standard_Model_of_Elementary_Particles_modified_version.svg/250px-Standard_Model_of_Elementary_Particles_modified_version.svg.png" alt="Modello Standard">
+    </div>
   </div>
 
 </div>
